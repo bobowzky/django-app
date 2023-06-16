@@ -1,0 +1,1 @@
+# Moje aplikace v Djangu na téma anime

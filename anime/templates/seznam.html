@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Seznam anime{% endblock %}
+
+{% block content %}
+    <h1>Seznam anime</h1>
+    <div class="row bg-dark p-3">
+    {% for anime in animes %}
+        <div class="col-lg-2 col-md-4">
+            <img src="{{ anime.ilustracni_foto.url }}"
+                 alt="Fotka: {{ anime.titul }}"
+                 class="img-fluid rounded">
+            <p><a href="{% url 'anime_detail' anime.id %}" class="link-light">{{ anime.titul }}</a></p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

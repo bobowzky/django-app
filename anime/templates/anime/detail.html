@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ anime }}{% endblock %}
+
+{% block content %}
+<hr>
+<h2 class="text-light text-center">{{ anime.titul }}</h2>
+<hr class="text-white">
+<div class="container text-light">
+    <div class="row">
+        <div class="col-sm-4 text-light">
+            <img src="{{ anime.ilustracni_foto.url }}" alt="{{ anime.titul }}"
+                 class="img-fluid">
+        </div>
+        <div class="col-sm text-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h3>
+                            Studio:
+                        </h3>
+                        <hr>
+                    </div>
+                    <div class="col">
+                        <h3> {{ anime.studio }} </h3>
+                        <hr>
+
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                        <h3>
+                            Rok vydání:
+                        </h3>
+                        <hr>
+                    </div>
+                    <div class="col">
+                        <h3> {{ anime.rok_vydani }}</h3>
+                        <hr>
+                    </div>
+                    <div class="w-100"></div>
+                    <div class="col">
+                        <h3>
+                            Hodnocení:
+                        </h3>
+                        <hr>
+                    </div>
+                    <div class="col">
+                        <h3> {{ anime.hodnoceni }}</h3>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="text-white">
+                <h3>Obsah:</h3>
+                <div>{{ anime.obsah }}</div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+<div class="container">
+    <div class="row">
+
+        <div class="text-light">
+
+        </div>
+        <div class="col-md-8">
+
+            <h4>Žánry</h4>
+            <ul>
+                {% for anime in animes %}
+                <li>{{ anime.zanr }}</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
